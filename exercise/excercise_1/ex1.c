@@ -5,9 +5,14 @@
 int main(int argc, char *argv[])
 {
 
+    if (argc < 2){
+        printf("please in put number\n");
+        printf("Generate prime number up to input number\n");
+        return 1;
+    }
     int up_to, count;
 
-    up_to = atoi(*(argv+1));
+    up_to = atoi(argv[1]);
 
     for(int i = 0; i <= up_to; i++)
     {
