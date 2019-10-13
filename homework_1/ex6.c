@@ -1,5 +1,11 @@
+/*
+ * 
+ * ex6.c
+ * Write your own "atoi" function.
+ *
+ */
+
 #include <stdio.h>
-#include <stdlib.h>
 
 
 int atoi2(char *str) {
@@ -8,7 +14,6 @@ int atoi2(char *str) {
 
     while(str[i] != '\0') {
         result = (result*10)+ str[i] - '0';
-//        printf("%d, ", result);
         i++;
     }
 
@@ -17,8 +22,10 @@ int atoi2(char *str) {
 
 int main(int argc, char *argv[])
 {
-    //res = res * 10 + c - '0';
-
+    if (argc < 2){
+        printf("please input one number as argument\n");
+        return 1;
+    }
     printf("%d\n", atoi2(argv[1]));
 
     return 0;

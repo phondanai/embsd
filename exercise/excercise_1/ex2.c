@@ -1,24 +1,41 @@
+/*
+ * ex2.c
+ * Write a program that prints all prime numbers up to N 
+ * (value N should be given from the command argument)
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
+
 
 int main(int argc, char *argv[])
 {
 
-    int x, y, sum=0;
-
     if (argc < 2)
     {
-        printf("please input two numbers\n");
+        printf("please input a number\n");
         return 1;
     }
 
-    x = atoi(argv[1]);
-    y = atoi(argv[2]);
+    int up_to, prime, i, denom;
 
-    for (int i =1;i<=y; i++)
-        sum += x;
+    up_to = atoi(argv[1]);
 
-    printf("%d\n",sum);
+    for (i = 2; i <= up_to; i++){
+        prime = 1;
+        for(denom = 2; denom < i; denom++)
+        {
+            if((i % denom) == 0) {
+                prime = 0;
+                break;
+            }
+        }
+        if (prime == 1)
+        {
+            printf("%d\n", i);
+        }
+    }
+
 
 
     return 0;

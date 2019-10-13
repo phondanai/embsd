@@ -1,6 +1,7 @@
 /*
- * ex1.c
- * Write a program that prints all prime numbers up to N (value N should be given from the command argument)
+ * ex2.c
+ * Write a program that prints all prime numbers up to N 
+ * (value N should be given from the command argument)
  */
 
 #include <stdio.h>
@@ -9,6 +10,12 @@
 
 int main(int argc, char *argv[])
 {
+
+    if (argc < 2)
+    {
+        printf("please input a number\n");
+        return 1;
+    }
 
     int up_to, prime, i, denom;
 

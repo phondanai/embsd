@@ -22,7 +22,7 @@ int main(int argc, char *argv[]){
     number = atoi(argv[1]);
 
     printf("%d = ", number);
-    while(number!=0) {
+    while(number!=1) {
         if(number % div != 0)
         {
             div = div + 1;
