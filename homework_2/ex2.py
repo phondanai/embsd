@@ -16,7 +16,6 @@ def quickselect(l, k, pivot_fn):
     :return: The kth element of l
     """
     if len(l) == 1:
-        assert k == 0
         return l[0]
 
     pivot = pivot_fn(l)
@@ -34,6 +33,7 @@ def quickselect(l, k, pivot_fn):
         return quickselect(highs, k - len(lows) - len(pivots), pivot_fn)
 
 
-S = [10,2,11,3,6,20,9,4,7]
+S = []
+for i in range(999):
+    S.append(random.randint(1,100000))
 print(quickselect_median(S))
-

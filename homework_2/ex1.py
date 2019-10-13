@@ -1,12 +1,8 @@
 import sys
 
-#input_text = sys.argv[1:]
-#print(input_text)
-
-#sorted_text = sorted(input_text)
-#
-#for element in sorted_text:
-#    print('"{}"'.format(element))
+if len(sys.argv) < 2:
+    print("usage: {} text you want to sort".format(sys.argv[0]))
+    sys.exit(0)
 
 print(" ".join(sorted(sys.argv[1:])))
 
