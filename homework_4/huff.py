@@ -43,7 +43,7 @@ class NodeTree(object):
 
 # Traverse the NodeTree in every possible way to get codings
 def huffmanCodeTree(node, left=True, binString=""):
-    if type(node) is str:
+    if type(node) is int:
         return {node: binString}
     (l, r) = node.children()
 
@@ -62,7 +62,7 @@ if __name__ == "__main__":
 
     input_file = sys.argv[1]
 
-    with open("lorem.txt", "r") as f:
+    with open("lorem.txt", "rb") as f:
         string = f.read()
 
     freq = {}
@@ -141,12 +141,14 @@ if __name__ == "__main__":
     code_string = "".join(["{0:08b}".format(i) for i in byte_s])
 
     key = ""
-    ff = ""
+    #ff = ""
+    ff = []
     for i in code_string[:code_length]:
         key += i
         if key in decode_dict:
-            ff += decode_dict[key]
+            #ff += decode_dict[key]
+            ff += [decode_dict[key]]
             key = ""
 
     with open("{}".format(input_file) + ".decompress", "wb") as decompressed_file:
-        decompressed_file.write(ff.encode())
+        decompressed_file.write(bytes(ff))
