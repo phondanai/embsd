@@ -62,7 +62,7 @@ if __name__ == "__main__":
 
     input_file = sys.argv[1]
 
-    with open("lorem.txt", "rb") as f:
+    with open(input_file, "rb") as f:
         string = f.read()
 
     freq = {}
